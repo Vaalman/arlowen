@@ -18,17 +18,13 @@
 
 html,body{
     width:100%;
-    height:100%;
+    min-height:100%;
 }
 
 body{
     background:#050505;
     color:#cfcfcf;
-    display:flex;
-    justify-content:center;
-    align-items:center;
     font-family:Arial, sans-serif;
-    overflow:hidden;
     opacity:0;
     animation:fadeIn 1.4s ease forwards;
 }
@@ -37,11 +33,21 @@ body{
     to{opacity:1;}
 }
 
+/* HERO SECTION */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:2rem;
+    position:relative;
+}
+
 .container{
     text-align:center;
     width:100%;
     max-width:1400px;
-    padding:3rem 2rem;
 }
 
 h1{
@@ -122,6 +128,55 @@ h1{
     user-select:none;
 }
 
+/* SCROLL INDICATOR */
+
+.scroll-indicator{
+    position:absolute;
+    bottom:4.5rem;
+    left:50%;
+    transform:translateX(-50%);
+
+    color:#4f4f4f;
+    font-size:2.4rem;
+    line-height:1;
+
+    animation:floatArrow 3s ease-in-out infinite;
+
+    user-select:none;
+}
+
+@keyframes floatArrow{
+    0%,100%{
+        transform:translateX(-50%) translateY(0);
+        opacity:0.45;
+    }
+
+    50%{
+        transform:translateX(-50%) translateY(6px);
+        opacity:0.9;
+    }
+}
+
+/* VIDEO SECTION */
+
+.video-section{
+    width:100%;
+    padding:0 2rem 8rem 2rem;
+    display:flex;
+    justify-content:center;
+}
+
+.video-wrapper{
+    width:min(1200px, 100%);
+    aspect-ratio:16 / 9;
+}
+
+.video-wrapper iframe{
+    width:100%;
+    height:100%;
+    border:none;
+}
+
 @media (max-width:700px){
 
     h1{
@@ -144,25 +199,59 @@ h1{
         font-size:0.58rem;
         letter-spacing:0.18em;
     }
+
+    .video-section{
+        padding:0 1rem 4rem 1rem;
+    }
 }
 </style>
 </head>
 
 <body>
-<div class="container">
 
-    <h1>A r l ø w e n</h1>
+<section class="hero">
 
-    <div class="links">
-        <a href="https://www.youtube.com/@Arl%C3%B8wenmusic" target="_blank">YouTube</a>
-        <a href="https://www.instagram.com/arlowen.music" target="_blank">Instagram</a>
-        <a href="https://arlowen.bandcamp.com/" target="_blank">Bandcamp</a>
+    <div class="container">
+
+        <h1>A r l ø w e n</h1>
+
+        <div class="links">
+            <a href="https://www.youtube.com/@Arl%C3%B8wenmusic" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/arlowen.music" target="_blank">Instagram</a>
+            <a href="https://arlowen.bandcamp.com/" target="_blank">Bandcamp</a>
+        </div>
+
+        <div class="tagline">
+            ambient transmissions
+        </div>
+
     </div>
 
-    <div class="tagline">
-        ambient transmissions
+    <div class="scroll-indicator">
+        ⌄
     </div>
 
-</div>
+</section>
+
+<!-- VIDEO SECTION -->
+
+<section class="video-section">
+
+    <div class="video-wrapper">
+
+        <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/videoseries?list=PLEEoYfRBPWq-FwenwEFaUoqL0aExYrGKJ"
+            title="YouTube playlist player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</section>
+
 </body>
 </html>
