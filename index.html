@@ -65,16 +65,46 @@ section{
 
     padding:2rem;
 
+    position:relative;
+
     scroll-snap-align:start;
 }
 
-.about-content{
-    max-width:760px;
+.about-layout{
+    width:100%;
+    max-width:1200px;
+}
 
-    text-align:center;
+.about-content{
+    display:grid;
+    grid-template-columns:1fr 2fr;
+
+    gap:4rem;
+
+    align-items:center;
+}
+
+.about-avatar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.about-avatar img{
+    width:100%;
+    max-width:320px;
+
+    aspect-ratio:1 / 1;
+    object-fit:cover;
+
+    border-radius:50%;
+
+    opacity:0.92;
 }
 
 .about-content h2{
+    grid-column:2;
+
     font-family:"Josefin Sans", sans-serif;
     font-weight:300;
 
@@ -84,7 +114,7 @@ section{
 
     color:#9a9a9a;
 
-    margin-bottom:3rem;
+    margin-bottom:-1rem;
 }
 
 .about-content p{
@@ -93,7 +123,7 @@ section{
     font-size:0.95rem;
     line-height:2;
 
-    margin-bottom:1.8rem;
+    max-width:620px;
 }
 
 .container{
@@ -307,94 +337,78 @@ h1{
     }
 
     .video-section{
-        padding:0 1rem 4rem 1rem;
+        padding:2rem 1rem;
+    }
+
+    /* MOBILE ABOUT LAYOUT */
+
+    .about-layout{
+        display:flex;
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:2rem;
+    }
+
+    .about-content{
+        width:100%;
+        text-align:left;
+    }
+
+    .about-content h2{
+        margin-bottom:1.5rem;
+    }
+
+    .about-content p{
+        font-size:0.9rem;
+        line-height:1.9;
+
+        max-width:none;
+    }
+
+    .about-avatar{
+        width:100%;
+
+        display:flex;
+        justify-content:flex-start;
+    }
+
+    .about-avatar img{
+        max-width:110px;
     }
 	
-	.about-layout{
-    grid-template-columns:1fr;
-    gap:3rem;
-}
-
-	.about-avatar img{
-		max-width:220px;
-	}
+	/* MOBILE ABOUT LAYOUT */
 
 	.about-content{
-		text-align:center;
+		display:flex;
+		flex-direction:column;
+
+		align-items:flex-start;
+
+		gap:1.5rem;
 	}
-}
 
-/* ABOUT SECTION */
+	.about-content h2{
+		grid-column:auto;
 
-.about-section{
-    min-height:100vh;
+		margin-bottom:0;
+	}
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+	.about-avatar{
+		justify-content:flex-start;
+	}
 
-    padding:2rem;
+	.about-avatar img{
+		max-width:110px;
+	}
 
-    position:relative;
+	.about-content p{
+		max-width:none;
 
-    scroll-snap-align:start;
-}
-
-.about-layout{
-    width:100%;
-    max-width:1200px;
-
-    display:grid;
-    grid-template-columns:1fr 2fr;
-    gap:4rem;
-
-    align-items:center;
-}
-
-.about-avatar{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.about-avatar img{
-    width:100%;
-    max-width:320px;
-
-    aspect-ratio:1 / 1;
-    object-fit:cover;
-
-    border-radius:50%;
-
-    opacity:0.92;
-}
-
-.about-content{
-    text-align:left;
-}
-
-.about-content h2{
-    font-family:"Josefin Sans", sans-serif;
-    font-weight:300;
-
-    font-size:1rem;
-    letter-spacing:0.32em;
-    text-transform:uppercase;
-
-    color:#9a9a9a;
-
-    margin-bottom:3rem;
-}
-
-.about-content p{
-    color:#6a6a6a;
-
-    font-size:0.95rem;
-    line-height:2;
-
-    margin-bottom:1.8rem;
-
-    max-width:620px;
+		font-size:0.9rem;
+		line-height:1.9;
+	}
 }
 
 /* CUSTOM SCROLLBAR */
@@ -463,39 +477,47 @@ html{
 
     <div class="about-layout">
 
-        <div class="about-avatar">
+        <div class="about-content">
 
-            <img src="pictures/avatar.jpg" alt="Arløwen">
+            <h2>A r l ø w e n</h2>
+
+            <div class="about-avatar">
+
+                <img src="pictures/avatar.jpg" alt="Arløwen">
+
+            </div>
+
+            <p>
+                Not just a name, but a feeling.<br>
+                The last ember in the cold, humming through fogged memories of forgotten places.
+                <br><br>
+
+                I love taking inspiration from desolate and quiet places in nature,
+                translating those feelings into dark yet warm ambient music,
+                atmospheric soundscapes, and slow-moving drones.
+                <br><br>
+
+                Dream away with me through slow, immersive ambient textures
+                and cinematic sound design, shaped by samples,
+                synthesizers, and generative modular patches.
+                <br><br>
+
+                Human-crafted sound only • No AI-generated audio
+            </p>
 
         </div>
 
-        <div class="about-content">
-
-        <h2>A r l ø w e n</h2>
-
-        <p>
-        Not just a name, but a feeling.<br>
-		The last ember in the cold, humming through fogged memories of forgotten places.<br>
-		<br>
-		I love taking inspiration from desolate and quiet places in nature, translating those feelings into dark yet warm ambient music, atmospheric soundscapes, and slow-moving drones.<br>
-		<br>
-		Dream away with me through slow, immersive ambient textures and cinematic sound design, shaped by samples, synthesizers, and generative modular patches.<br>
-		<br>
-		Human-crafted sound only • No AI-generated audio
-        </p>
-		
-
     </div>
-	
-	<a href="#video-section" class="scroll-indicator about-scroll">
 
-    <span class="scroll-arrow">v</span>
+    <a href="#video-section" class="scroll-indicator about-scroll">
 
-    <span class="scroll-label">Listen</span>
+        <span class="scroll-arrow">v</span>
 
-    <span class="scroll-arrow">v</span>
+        <span class="scroll-label">Listen</span>
 
-	</a>
+        <span class="scroll-arrow">v</span>
+
+    </a>
 
 </section>
 
@@ -512,7 +534,7 @@ html{
             <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/videoseries?list=PLEEoYfRBPWq-FwenwEFaUoqL0aExYrGKJ&autoplay=1&rel=0"
+                src="https://www.youtube.com/embed/videoseries?list=PLEEoYfRBPWq-FwenwEFaUoqL0aExYrGKJ"
                 title="YouTube playlist player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
