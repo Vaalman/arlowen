@@ -19,6 +19,8 @@
 html,body{
     width:100%;
     min-height:100%;
+    scroll-snap-type:y mandatory;
+    scroll-behavior:smooth;
 }
 
 body{
@@ -27,6 +29,12 @@ body{
     font-family:Arial, sans-serif;
     opacity:0;
     animation:fadeIn 1.4s ease forwards;
+    min-height:100%;
+    overscroll-behavior-y:none;
+}
+
+section{
+    scroll-snap-stop:always;
 }
 
 @keyframes fadeIn{
@@ -42,6 +50,8 @@ body{
     align-items:center;
     padding:2rem;
     position:relative;
+	
+	scroll-snap-align:start;
 }
 
 .container{
@@ -140,9 +150,10 @@ h1{
     font-size:2.4rem;
     line-height:1;
 
-    animation:floatArrow 3s ease-in-out infinite;
+    animation:floatArrow 2s ease-in-out infinite;
 
     user-select:none;
+	text-decoration:none;
 }
 
 @keyframes floatArrow{
@@ -160,14 +171,23 @@ h1{
 /* VIDEO SECTION */
 
 .video-section{
+    min-height:100vh;
     width:100%;
-    padding:0 2rem 8rem 2rem;
+
+    padding:3rem 2rem 4rem 2rem;
+
     display:flex;
-    justify-content:center;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+
+    gap:2rem;
+
+    scroll-snap-align:start;
 }
 
 .video-wrapper{
-    width:min(1200px, 100%);
+    width:min(1100px, 92vw);
     aspect-ratio:16 / 9;
 }
 
@@ -204,6 +224,45 @@ h1{
         padding:0 1rem 4rem 1rem;
     }
 }
+
+/* ABOUT SECTION */
+
+.about{
+    width:100%;
+    max-width:900px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    min-height:30vh;
+}
+
+.about h2{
+    font-family:"Josefin Sans", sans-serif;
+    font-weight:300;
+
+    font-size:1.1rem;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+
+    color:#9a9a9a;
+
+    margin-bottom:2rem;
+}
+
+.about p{
+    color:#6a6a6a;
+
+    font-size:0.9rem;
+    line-height:1.9;
+
+    max-width:720px;
+}
+
 /* CUSTOM SCROLLBAR */
 
 ::-webkit-scrollbar{
@@ -252,15 +311,32 @@ html{
 
     </div>
 
-    <div class="scroll-indicator">
-        ⌄
-    </div>
+    <a href="#video-section" class="scroll-indicator">
+    ⌄
+	</a>
 
 </section>
 
 <!-- VIDEO SECTION -->
 
-<section class="video-section">
+<section class="video-section" id="video-section">
+
+    <div class="about">
+
+        <h2>Arløwen</h2>
+
+        <p>
+        Not just a name, but a feeling.<br>
+		The last ember in the cold, humming through fogged memories of forgotten places.<br>
+		<br>
+		I love taking inspiration from desolate and quiet places in nature, translating those feelings into dark yet warm ambient music, atmospheric soundscapes, and slow-moving drones.<br>
+		<br>
+		Dream away with me through slow, immersive ambient textures and cinematic sound design, shaped by samples, synthesizers, and generative modular patches.<br>
+		<br>
+		Human-crafted sound only • No AI-generated audio
+        </p>
+
+    </div>
 
     <div class="video-wrapper">
 
