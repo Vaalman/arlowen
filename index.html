@@ -366,75 +366,45 @@ h1{
     }
 
     .about-content{
+        display:flex;
+        flex-direction:column;
+
+        align-items:flex-start;
+
         width:100%;
-        text-align:left;
-    }
 
-    .about-content h2{
-        margin-bottom:1.5rem;
-    }
-
-    .about-content p{
-        font-size:0.9rem;
-        line-height:1.9;
-
-        max-width:none;
+        gap:1.5rem;
     }
 
     .about-avatar{
+        order:-1;
+
         width:100%;
 
         display:flex;
-        justify-content:flex-start;
+        justify-content:center;
     }
 
     .about-avatar img{
-        max-width:110px;
+        max-width:80px;
     }
-	
-	/* MOBILE ABOUT LAYOUT */
 
-	.about-content{
-		display:flex;
-		flex-direction:column;
+    .about-content h2{
+        width:100%;
 
-		align-items:flex-start;
+        text-align:left;
 
-		gap:1.5rem;
-	}
+        grid-column:auto;
 
-	.about-content h2{
-		grid-column:auto;
+        margin-bottom:0;
+    }
 
-		text-align:left;
-		
-		margin-bottom:0;
-	}
+    .about-content p{
+        max-width:none;
 
-	.about-avatar{
-		order:-1;
-		
-		width:100%;
-
-		display:flex;
-		justify-content:center;
-	}
-
-	.about-avatar img{
-		max-width:80px;
-	}
-
-	.about-content h2{
-		width:100%;
-		text-align:center;
-	}
-
-	.about-content p{
-		max-width:none;
-
-		font-size:0.9rem;
-		line-height:1.9;
-	}
+        font-size:0.9rem;
+        line-height:1.9;
+    }
 }
 
 /* CUSTOM SCROLLBAR */
