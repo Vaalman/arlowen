@@ -121,7 +121,7 @@ section{
 
 .about-avatar img{
     width:100%;
-    max-width:320px;
+    max-width:240px;
 
     aspect-ratio:1 / 1;
     object-fit:cover;
@@ -137,9 +137,9 @@ section{
     font-family:"Josefin Sans", sans-serif;
     font-weight:300;
 
-    font-size:1rem;
-    letter-spacing:0.32em;
-    text-transform:uppercase;
+    font-size:1.4rem;
+    /*letter-spacing:0.34em;
+    text-transform:uppercase;*/
 
     color:#9a9a9a;
 
@@ -149,8 +149,10 @@ section{
 .about-content p{
     color:#6a6a6a;
 
-    font-size:0.95rem;
+    font-size:1rem;
     line-height:2;
+    font-family:"Josefin Sans", sans-serif;
+    font-weight:300;
 
     max-width:620px;
 }
@@ -202,7 +204,7 @@ h1{
 .links a{
     color:#7f7f7f;
     text-decoration:none;
-    font-size:0.72rem;
+    font-size:0.8rem;
     letter-spacing:0.34em;
     text-transform:uppercase;
     display:inline-block;
@@ -232,10 +234,10 @@ h1{
 
 .tagline{
     margin-top:3.5rem;
-    color:#4f4f4f;
-    font-size:0.62rem;
-    letter-spacing:0.28em;
-    text-transform:uppercase;
+    color:#3f3f3f;
+    font-size:0.68rem;
+    letter-spacing:0.58em;
+    /*text-transform:uppercase;*/
     user-select:none;
 }
 
@@ -304,6 +306,8 @@ h1{
     align-items:center;
 
     padding:2rem;
+	
+	position:relative;
 
     scroll-snap-align:start;
     background:
@@ -332,9 +336,9 @@ h1{
     font-family:"Josefin Sans", sans-serif;
     font-weight:300;
 
-    font-size:1rem;
+    font-size:1.4rem;
     letter-spacing:0.32em;
-    text-transform:uppercase;
+    /*text-transform:uppercase;*/
 
     color:#9a9a9a;
 
@@ -350,6 +354,29 @@ h1{
     width:100%;
     height:100%;
     border:none;
+}
+
+.return-scroll{
+    position:absolute;
+
+    bottom:6vh;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+.return-scroll .scroll-arrow{
+    display:inline-block;
+    transform:rotate(180deg);
+}
+
+.link-separator{
+    color:#4f4f4f;
+
+    font-size:0.85rem;
+
+
+    user-select:none;
 }
 
 @media (max-width:700px){
@@ -372,7 +399,7 @@ h1{
     .tagline{
         margin-top:2.5rem;
         font-size:0.58rem;
-        letter-spacing:0.18em;
+        letter-spacing:0.58em;
     }
 
     .video-section{
@@ -389,6 +416,11 @@ h1{
 
         gap:2rem;
     }
+	
+	.links a::after{
+        width:100%;
+        opacity:0.2;
+    }
 
     .about-content{
         display:flex;
@@ -401,14 +433,16 @@ h1{
         gap:1.5rem;
     }
 
-    .about-avatar{
-        order:-1;
+	.about-avatar{
+		order:-1;
 
-        width:100%;
+		width:100%;
 
-        display:flex;
-        justify-content:center;
-    }
+		display:flex;
+		justify-content:flex-start;
+
+		padding-left:1.2rem;
+	}
 
     .about-avatar img{
         max-width:80px;
@@ -416,6 +450,7 @@ h1{
 
     .about-content h2{
         width:100%;
+		letter-spacing:0.32em;
 
         text-align:left;
 
@@ -462,7 +497,7 @@ html{
 
 <body>
 
-<section class="hero">
+<section class="hero" id="top">
 
     <div class="container">
 
@@ -470,7 +505,9 @@ html{
 
         <div class="links">
             <a href="https://www.youtube.com/@Arl%C3%B8wenmusic" target="_blank">YouTube</a>
+			<span class="link-separator">•</span>
             <a href="https://www.instagram.com/arlowen.music" target="_blank">Instagram</a>
+			<span class="link-separator">•</span>
             <a href="https://arlowen.bandcamp.com/" target="_blank">Bandcamp</a>
         </div>
 
@@ -483,6 +520,7 @@ html{
     <a href="#about-section" class="scroll-indicator">
 
     <span class="scroll-arrow">v</span>
+	
 
     <span class="scroll-label">About</span>
 
@@ -500,7 +538,7 @@ html{
 
         <div class="about-content">
 
-            <h2>A r l ø w e n</h2>
+            <h2>Arløwen</h2>
 
             <div class="about-avatar">
 
@@ -509,18 +547,17 @@ html{
             </div>
 
             <p>
-                Not just a name, but a feeling.<br>
-                The last ember in the cold, humming through fogged memories of forgotten places.
+                Somewhere between lingering feelings and fogged memories,<br>
+                a faint transmission hums through the distance...
                 <br><br>
 
-                I love taking inspiration from desolate and quiet places in nature,
-                translating those feelings into dark yet warm ambient music,
-                atmospheric soundscapes, and slow-moving drones.
+                Taking inspiration from desolate landscapes and quiet moments in nature,
+				I translate feelings into dark yet warm ambient music,
+				atmospheric soundscapes, and slow-moving drones.
                 <br><br>
 
-                Dream away with me through slow, immersive ambient textures
-                and cinematic sound design, shaped by samples,
-                synthesizers, and generative modular patches.
+                Tune in and wander with me through slow, immersive ambient textures and cinematic atmospheres,
+				shaped by samples, synthesizers, and generative modular patches.
                 <br><br>
 
                 Human-crafted sound only • No AI-generated audio
@@ -548,7 +585,7 @@ html{
 
     <div class="video-content">
 
-        <h2>continuous transmission</h2>
+        <h2>Continuous transmission</h2>
 
         <div class="video-wrapper">
 
@@ -565,7 +602,17 @@ html{
         </div>
 
     </div>
+	
+	<a href="#top" class="scroll-indicator return-scroll">
 
+    <span class="scroll-arrow">v</span>
+
+    <span class="scroll-label">back to top</span>
+
+    <span class="scroll-arrow">v</span>
+
+</a>
+	
 </section>
 
 </body>
